@@ -1,0 +1,72 @@
+{
+  "name": "catalyst-ui",
+  "version": "0.1.0",
+  "description": "Catalyst Component UI",
+  "main": "N/A",
+  "repository": "https://github.com/machtwatch/catalyst-ui.git",
+  "author": "Catalyst Tech",
+  "contributors": [
+    {
+      "name": "Fahmi Idris",
+      "email": "fahmi.idris@machtwatch.co.id"
+    }
+  ],
+  "license": "Apache-2.0",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build",
+    "build:storybook": "lerna run storybook:build",
+    "clean": "lerna run clean",
+    "lerna": "lerna",
+    "lint": "lerna run lint",
+    "prepublish": "lerna run prepublish",
+    "report-coverage": "yarn workspace @catalyst-ui/account-platform run report-coverage",
+    "start": "lerna run start --stream --parallel",
+    "storybook": "yarn workspace @catalyst-ui/account-platform run storybook",
+    "storybook:build": "lerna run build-storybook",
+    "test": "lerna run test --",
+    "test:coverage": "yarn workspace @catalyst-ui/account-platform run test:coverage",
+    "type-check": "tsc --noEmit",
+    "validate": "yarn lint && yarn type-check",
+    "canary:release": "lerna version prerelease --preid=canary",
+    "canary:publish": "lerna publish from-git --npm-tag canary --yes",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^14.1.0",
+    "@commitlint/config-conventional": "^14.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "@types/node": "^17.0.31",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
+    "eslint": "7.32.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^7.0.4",
+    "lerna": "^3.22.1",
+    "lint-staged": "^11.2.6",
+    "prettier": "^2.3.2",
+    "rimraf": "^3.0.0",
+    "tsdx": "0.14.1",
+    "typeface-inter": "^3.18.1",
+    "typescript": "~4.4.4"
+  }
+}
