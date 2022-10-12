@@ -6,7 +6,7 @@
   "module": "dist/account-platform.esm.js",
   "typings": "dist/index.d.ts",
   "catalyst:src": "./src/index.ts",
-  "repository": "https://github.com/machtwatch/catalyst-ui.git",
+  "repository": "https://github.com/fahmi-machtwatch/catalyst-ui.git",
   "author": "Catalyst Tech",
   "license": "Apache-2.0",
   "files": [
