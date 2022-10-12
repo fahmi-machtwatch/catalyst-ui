@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
-import { Box } from '@chakra-ui/react';
+
+import UsersListComponent from '../components/users-list';
 
 export default {
   title: 'Account Platform',
@@ -11,6 +12,6 @@ export default {
   },
 };
 
-export const Provider: Story = () => {
-  return <Box>Account Platform</Box>;
+export const UsersList: Story = () => {
+  return <UsersListComponent actions={{ onLoad: '/api/resellers' }} />;
 };

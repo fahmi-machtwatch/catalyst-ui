@@ -25,7 +25,7 @@ export const parameters = {
 
 export const decorators = [
   Story => (
-    <AccountPlatformProvider config={{ baseURL: 'https://jsonplaceholder.typicode.com', headers: { Authorization: 'Bearer some-token' } }}>
+    <AccountPlatformProvider config={{ baseURL: 'http://188.166.209.178:8080' }}>
       <Story />
     </AccountPlatformProvider>
   ),
