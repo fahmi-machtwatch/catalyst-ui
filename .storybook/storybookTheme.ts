@@ -5,7 +5,7 @@ import { create } from '@storybook/theming/create';
 
 const storybookTheme = create({
   base: 'light',
-  brandTitle: 'Catalyst UI',
+  brandTitle: 'Voila UI',
   brandUrl: 'https://github.com',
 });
 

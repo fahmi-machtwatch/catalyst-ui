@@ -1,12 +1,12 @@
 {
-  "name": "@catalyst-ui/account-platform",
+  "name": "@catalyst-ui/xms",
   "version": "1.0.0-canary-2",
-  "description": "Catalyst Component UI",
+  "description": "Voila XMS UI Component",
   "main": "dist/index.js",
-  "module": "dist/account-platform.esm.js",
+  "module": "dist/xms.esm.js",
   "typings": "dist/index.d.ts",
-  "catalyst:src": "./src/index.ts",
-  "repository": "https://github.com/fahmi-machtwatch/catalyst-ui.git",
+  "xms:src": "./src/index.ts",
+  "repository": "https://github.com",
   "author": "Catalyst Tech",
   "license": "Apache-2.0",
   "files": [
@@ -17,15 +17,12 @@
   },
   "scripts": {
     "build": "tsdx build --transpileOnly --tsconfig tsconfig.build.json",
-    "build-storybook": "build-storybook --quiet",
     "clean": "rimraf dist",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "prepublish": "yarn build",
     "report-coverage": "codecov -f ./coverage/*.json",
     "start": "tsdx watch --tsconfig tsconfig.build.json --verbose",
-    "storybook": "start-storybook -p 9001",
-    "storybook:build": "build-storybook --quiet",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "type-check": "tsc --emitDeclarationOnly"
@@ -40,6 +37,7 @@
     "axios": "^0.27.2",
     "clsx": "^1.1.1",
     "framer-motion": "^6.3.13",
+    "swr": "^1.3.0",
     "tslib": "^2.3.1"
   },
   "peerDependencies": {
@@ -49,15 +47,6 @@
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/preset-typescript": "^7.18.6",
-    "@chakra-ui/storybook-addon": "^4.0.12",
-    "@storybook/addon-actions": "^6.5.12",
-    "@storybook/addon-essentials": "^6.5.12",
-    "@storybook/addon-knobs": "^6.3.0",
-    "@storybook/addon-links": "^6.5.12",
-    "@storybook/builder-webpack5": "^6.5.12",
-    "@storybook/manager-webpack5": "^6.5.12",
-    "@storybook/react": "^6.5.12",
-    "@storybook/theming": "^6.5.12",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@types/jest": "^26.0.24",

@@ -10,27 +10,27 @@ type RequestInterceptors = (
 
 type ResponseInterceptors = (value: AxiosResponse<unknown>) => AxiosResponse<unknown> | Promise<AxiosResponse<unknown>>;
 
-export type AccountPlatformProviderProps = {
+export type XMSProviderProviderProps = {
   children?: React.ReactNode;
   config?: AxiosRequestConfig<unknown>;
   requestInterceptors?: RequestInterceptors[];
   responseInterceptors?: ResponseInterceptors[];
 };
 
-export type AccountPlatformContextObject = {
+export type XMSProviderContextObject = {
   instance?: AxiosInstance;
 };
 
-export const AccountPlatformContext = React.createContext<AccountPlatformContextObject>({
+export const XMSProviderContext = React.createContext<XMSProviderContextObject>({
   instance: undefined,
 });
 
-export const useAccountPlatform = (): AccountPlatformContextObject => {
-  const { instance } = React.useContext(AccountPlatformContext);
+export const useXMSProvider = (): XMSProviderContextObject => {
+  const { instance } = React.useContext(XMSProviderContext);
   return { instance };
 };
 
-const AccountPlatformProvider: React.FC<AccountPlatformProviderProps> = ({
+const XMSProviderProvider: React.FC<XMSProviderProviderProps> = ({
   children,
   config,
   requestInterceptors,
@@ -48,19 +48,19 @@ const AccountPlatformProvider: React.FC<AccountPlatformProviderProps> = ({
   }, []);
 
   return (
-    <AccountPlatformContext.Provider value={{ instance: instanceRef.current }}>
+    <XMSProviderContext.Provider value={{ instance: instanceRef.current }}>
       <ChakraProvider theme={theme}>{children}</ChakraProvider>
-    </AccountPlatformContext.Provider>
+    </XMSProviderContext.Provider>
   );
 };
 
-AccountPlatformProvider.defaultProps = {
+XMSProviderProvider.defaultProps = {
   children: undefined,
   config: undefined,
   requestInterceptors: undefined,
   responseInterceptors: undefined,
 };
 
-AccountPlatformProvider.displayName = 'AccountPlatformProvider';
+XMSProviderProvider.displayName = 'XMSProviderProvider';
 
-export default AccountPlatformProvider;
+export default XMSProviderProvider;

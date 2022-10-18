@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { Story } from '@storybook/react';
 import { Box } from '@chakra-ui/react';
 
 export default {
-  title: 'Account Platform',
+  title: 'XMS',
   parameters: {
     controls: {
       disabled: true,
@@ -11,6 +10,6 @@ export default {
   },
 };
 
-export const Provider: Story = () => {
-  return <Box>Account Platform</Box>;
+export const Provider = () => {
+  return <Box>XMS UI Components</Box>;
 };

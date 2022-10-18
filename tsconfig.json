@@ -2,7 +2,7 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "paths": {
-      "@catalyst-ui/account-platform": ["./packages/account-platform/src"],
+      "@catalyst-ui/xms": ["packages/xms/src"]
     }
   }
 }

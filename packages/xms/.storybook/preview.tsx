@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { AccountPlatformProvider } from '../src';
-import { theme } from '../src/config/themeConfiguration'
+import { XMSProvider } from '../src';
+import { theme } from '../src/config/themeConfiguration';
 
 export const parameters = {
   chakra: {
@@ -19,14 +19,14 @@ export const parameters = {
         name: 'dark',
         value: '#b6b2b2',
       },
-    ]
+    ],
   },
 };
 
 export const decorators = [
   Story => (
-    <AccountPlatformProvider config={{ baseURL: 'http://188.166.209.178:8080' }}>
+    <XMSProvider>
       <Story />
-    </AccountPlatformProvider>
+    </XMSProvider>
   ),
 ];

@@ -4,18 +4,15 @@ module.exports = {
   core: {
     builder: 'webpack5',
   },
-  stories: [
-    '../src/**/*.{story,stories}.mdx',
-    '../src/**/*.{story,stories}.@(js|jsx|ts|tsx)'
-  ],
+  stories: ['../packages/**/src/**/*.{story,stories}.mdx', '../packages/**/src/**/*.{story,stories}.@(js|jsx|ts|tsx)'],
   addons: [
     '@chakra-ui/storybook-addon',
     '@storybook/addon-essentials',
     '@storybook/addon-knobs',
-    '@storybook/addon-links'
+    '@storybook/addon-links',
   ],
   webpackFinal: config => {
-    config.resolve.mainFields = ['catalyst:src', 'browser', 'module', 'main'];
+    config.resolve.mainFields = ['xms:src', 'browser', 'module', 'main'];
     return config;
   },
   refs: {
