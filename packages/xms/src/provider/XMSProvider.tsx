@@ -10,7 +10,7 @@ type RequestInterceptors = (
 
 type ResponseInterceptors = (value: AxiosResponse<unknown>) => AxiosResponse<unknown> | Promise<AxiosResponse<unknown>>;
 
-export type XMSProviderProviderProps = {
+export type XMSProviderProps = {
   children?: React.ReactNode;
   config?: AxiosRequestConfig<unknown>;
   requestInterceptors?: RequestInterceptors[];
@@ -30,12 +30,7 @@ export const useXMSProvider = (): XMSProviderContextObject => {
   return { instance };
 };
 
-const XMSProviderProvider: React.FC<XMSProviderProviderProps> = ({
-  children,
-  config,
-  requestInterceptors,
-  responseInterceptors,
-}) => {
+const XMSProvider: React.FC<XMSProviderProps> = ({ children, config, requestInterceptors, responseInterceptors }) => {
   const instanceRef = React.useRef(axios.create(config));
 
   React.useEffect(() => {
@@ -57,13 +52,13 @@ const XMSProviderProvider: React.FC<XMSProviderProviderProps> = ({
   );
 };
 
-XMSProviderProvider.defaultProps = {
+XMSProvider.defaultProps = {
   children: undefined,
   config: undefined,
   requestInterceptors: undefined,
   responseInterceptors: undefined,
 };
 
-XMSProviderProvider.displayName = 'XMSProviderProvider';
+XMSProvider.displayName = 'XMSProvider';
 
-export default XMSProviderProvider;
+export default XMSProvider;
