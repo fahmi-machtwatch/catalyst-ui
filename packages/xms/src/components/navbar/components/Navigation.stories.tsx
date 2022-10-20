@@ -3,7 +3,7 @@ import { FiShoppingBag, FiShoppingCart } from 'react-icons/fi';
 
 import { theme } from '../../../config/theme';
 import { XMSProvider } from '../../../provider';
-import NavbarComponent from './Navigation';
+import NavigationComponent from './Navigation';
 
 export default {
   chakra: {
@@ -20,7 +20,7 @@ export default {
 export const Navigation = () => {
   return (
     <XMSProvider>
-      <NavbarComponent
+      <NavigationComponent
         navigations={[
           {
             title: 'Order',
