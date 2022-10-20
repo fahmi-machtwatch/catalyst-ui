@@ -1,12 +1,6 @@
 import * as React from 'react';
 
-import { XMSProvider } from '../src';
-import { theme } from '../src/config/themeConfiguration';
-
 export const parameters = {
-  chakra: {
-    theme,
-  },
   actions: { argTypesRegex: '^on[A-Z].*' },
   backgrounds: {
     default: 'base',
@@ -23,10 +17,4 @@ export const parameters = {
   },
 };
 
-export const decorators = [
-  Story => (
-    <XMSProvider>
-      <Story />
-    </XMSProvider>
-  ),
-];
+export const decorators = [Story => <Story />];

@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 
-import { theme } from '../config/themeConfiguration';
+import { theme } from '../config/theme';
 
 type RequestInterceptors = (
   value: AxiosRequestConfig<unknown>
@@ -49,7 +49,10 @@ const XMSProviderProvider: React.FC<XMSProviderProviderProps> = ({
 
   return (
     <XMSProviderContext.Provider value={{ instance: instanceRef.current }}>
-      <ChakraProvider theme={theme}>{children}</ChakraProvider>
+      <ChakraProvider theme={theme}>
+        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+        {children}
+      </ChakraProvider>
     </XMSProviderContext.Provider>
   );
 };
