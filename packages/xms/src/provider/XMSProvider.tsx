@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
+import { Box, ChakraProvider, ColorModeScript } from '@chakra-ui/react';
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 
 import { theme } from '../config/theme';
@@ -44,9 +44,11 @@ const XMSProvider: React.FC<XMSProviderProps> = ({ children, config, requestInte
 
   return (
     <XMSProviderContext.Provider value={{ instance: instanceRef.current }}>
-      <ChakraProvider theme={theme}>
-        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-        {children}
+      <ChakraProvider theme={theme} cssVarsRoot="#xms">
+        <Box id="xms">
+          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+          {children}
+        </Box>
       </ChakraProvider>
     </XMSProviderContext.Provider>
   );
