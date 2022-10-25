@@ -1902,7 +1902,7 @@
   resolved "https://registry.yarnpkg.com/@chakra-ui/transition/-/transition-2.0.10.tgz#a1ab786f4c2d0e41eb02dfd0f2f8f48a0bc9e35b"
   integrity sha512-Tkkne8pIIY7f95TKt2aH+IAuQqzHmEt+ICPqvg74QbmIpKE5ptX0cd+P3swBANw4ACnJcCc2vWIaKmVBQ9clLw==
 
-"@chakra-ui/utils@2.0.11":
+"@chakra-ui/utils@2.0.11", "@chakra-ui/utils@^2.0.11":
   version "2.0.11"
   resolved "https://registry.yarnpkg.com/@chakra-ui/utils/-/utils-2.0.11.tgz#8e773f900a8356bd10c48b59151a781dba1c7b70"
   integrity sha512-4ZQdK6tbOuTrUCsAQBHWo7tw5/Q6pBV93ZbVpats61cSWMFGv32AIQw9/hA4un2zDeSWN9ZMVLNjAY2Dq/KQOA==

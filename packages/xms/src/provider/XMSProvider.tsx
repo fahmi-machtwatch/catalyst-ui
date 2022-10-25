@@ -1,25 +1,10 @@
 import * as React from 'react';
-import { Box, ChakraProvider, ColorModeScript } from '@chakra-ui/react';
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+import { Box, ChakraProvider, ColorModeScript, extendTheme } from '@chakra-ui/react';
+import axios from 'axios';
+import { Dict } from '@chakra-ui/utils';
 
 import { theme } from '../config/theme';
-
-type RequestInterceptors = (
-  value: AxiosRequestConfig<unknown>
-) => AxiosRequestConfig<unknown> | Promise<AxiosRequestConfig<unknown>>;
-
-type ResponseInterceptors = (value: AxiosResponse<unknown>) => AxiosResponse<unknown> | Promise<AxiosResponse<unknown>>;
-
-export type XMSProviderProps = {
-  children?: React.ReactNode;
-  config?: AxiosRequestConfig<unknown>;
-  requestInterceptors?: RequestInterceptors[];
-  responseInterceptors?: ResponseInterceptors[];
-};
-
-export type XMSProviderContextObject = {
-  instance?: AxiosInstance;
-};
+import { XMSProviderContextObject, XMSProviderProps } from './types';
 
 export const XMSProviderContext = React.createContext<XMSProviderContextObject>({
   instance: undefined,
@@ -31,7 +16,7 @@ export const useXMSProvider = (): XMSProviderContextObject => {
 };
 
 const XMSProvider: React.FC<XMSProviderProps> = ({ children, config, requestInterceptors, responseInterceptors }) => {
-  const instanceRef = React.useRef(axios.create(config));
+  const instanceRef = React.useRef(axios.create(config?.instance));
 
   React.useEffect(() => {
     requestInterceptors?.forEach(interceptor => {
@@ -44,7 +29,7 @@ const XMSProvider: React.FC<XMSProviderProps> = ({ children, config, requestInte
 
   return (
     <XMSProviderContext.Provider value={{ instance: instanceRef.current }}>
-      <ChakraProvider theme={theme} cssVarsRoot="#xms">
+      <ChakraProvider theme={extendTheme(theme, config?.theme as Dict<unknown>)} cssVarsRoot="#xms">
         <Box id="xms">
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           {children}
@@ -52,13 +37,6 @@ const XMSProvider: React.FC<XMSProviderProps> = ({ children, config, requestInte
       </ChakraProvider>
     </XMSProviderContext.Provider>
   );
-};
-
-XMSProvider.defaultProps = {
-  children: undefined,
-  config: undefined,
-  requestInterceptors: undefined,
-  responseInterceptors: undefined,
 };
 
 XMSProvider.displayName = 'XMSProvider';
