@@ -1,6 +1,6 @@
 {
   "name": "@catalyst-ui/xms",
-  "version": "1.0.0-canary-3",
+  "version": "1.0.0-canary-4",
   "description": "Voila XMS UI Component",
   "main": "dist/index.js",
   "module": "dist/xms.esm.js",
