@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
 
 import { theme } from '../../../config/theme';
 import { XMSProvider } from '../../../provider';
@@ -18,13 +19,15 @@ export default {
 
 export const Header = () => {
   return (
-    <XMSProvider>
-      <HeaderComponent
-        version="v1.0.0"
-        environment="DEVELOPMENT"
-        email="fahmi@machtwatch.co.id"
-        userRole="Super Admin"
-      />
-    </XMSProvider>
+    <ChakraProvider theme={theme}>
+      <XMSProvider>
+        <HeaderComponent
+          version="v1.0.0"
+          environment="DEVELOPMENT"
+          email="fahmi@machtwatch.co.id"
+          userRole="Super Admin"
+        />
+      </XMSProvider>
+    </ChakraProvider>
   );
 };
