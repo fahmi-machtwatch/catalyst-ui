@@ -17,40 +17,42 @@ export default {
     theme,
   },
   title: 'XMS',
-  parameters: {
-    controls: {
-      disabled: true,
-    },
-  },
+  decorators: [
+    (Story: React.ElementType) => (
+      <ChakraProvider theme={theme}>
+        <XMSProvider>
+          <Story />
+        </XMSProvider>
+      </ChakraProvider>
+    ),
+  ],
 };
 
 export const Modal = () => {
   const { isOpen, onClose, onOpen } = useDisclosure();
   return (
-    <ChakraProvider theme={theme}>
-      <XMSProvider>
-        <Button onClick={onOpen}>Open Modal</Button>
-        <ModalComponent isOpen={isOpen} onClose={onClose} isCentered>
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader p="10px">Create Order</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody p="10px">
-              <VStack spacing="20px" my="10px" align="flex-start">
-                <Box>Inner Modal</Box>
-                <Box>Inner Modal</Box>
-                <Box>Inner Modal</Box>
-              </VStack>
-            </ModalBody>
-            <ModalFooter p="10px">
-              <Button type="submit">Create</Button>
-              <Button variant="outline" onClick={onClose}>
-                Cancel
-              </Button>
-            </ModalFooter>
-          </ModalContent>
-        </ModalComponent>
-      </XMSProvider>
-    </ChakraProvider>
+    <>
+      <Button onClick={onOpen}>Open Modal</Button>
+      <ModalComponent isOpen={isOpen} onClose={onClose} isCentered>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader p="10px">Create Order</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody p="10px">
+            <VStack spacing="20px" my="10px" align="flex-start">
+              <Box>Inner Modal</Box>
+              <Box>Inner Modal</Box>
+              <Box>Inner Modal</Box>
+            </VStack>
+          </ModalBody>
+          <ModalFooter p="10px">
+            <Button type="submit">Create</Button>
+            <Button variant="outline" onClick={onClose}>
+              Cancel
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </ModalComponent>
+    </>
   );
 };

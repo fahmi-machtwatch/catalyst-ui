@@ -43,9 +43,8 @@ jobs:
         with:
           path: '.'
           key: ${{ github.sha }}
-      - run: yarn test:coverage
+      - run: yarn test
         env:
           CI: true
-      - run: yarn report-coverage
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
