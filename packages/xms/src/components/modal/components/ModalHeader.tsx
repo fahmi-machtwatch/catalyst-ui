@@ -3,7 +3,7 @@ import { ModalHeader as ChakraModalHeader, ModalHeaderProps } from '@chakra-ui/r
 
 const ModalHeader = forwardRef<HTMLDivElement, ModalHeaderProps>(({ children, ...rest }, ref) => {
   return (
-    <ChakraModalHeader ref={ref} background="gray.100" borderTopRadius={'md'} {...rest}>
+    <ChakraModalHeader ref={ref} background="#f8f8f8" borderTopRadius={'md'} {...rest}>
       {children}
     </ChakraModalHeader>
   );

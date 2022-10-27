@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Button, ChakraProvider, useDisclosure, VStack } from '@chakra-ui/react';
+import { Box, Button, ChakraProvider, FormLabel, Input, useDisclosure, VStack } from '@chakra-ui/react';
 
 import { theme } from '../../../config/theme';
 import { XMSProvider } from '../../../provider';
@@ -39,10 +39,19 @@ export const Modal = () => {
           <ModalHeader p="10px">Create Order</ModalHeader>
           <ModalCloseButton />
           <ModalBody p="10px">
-            <VStack spacing="20px" my="10px" align="flex-start">
-              <Box>Inner Modal</Box>
-              <Box>Inner Modal</Box>
-              <Box>Inner Modal</Box>
+            <VStack spacing="20px" my="10px">
+              <Box w="100%">
+                <FormLabel>Name</FormLabel>
+                <Input placeholder="Here is a sample placeholder" />
+              </Box>
+              <Box w="100%">
+                <FormLabel>Address</FormLabel>
+                <Input placeholder="Here is a sample placeholder" />
+              </Box>
+              <Box w="100%">
+                <FormLabel>Email</FormLabel>
+                <Input placeholder="Here is a sample placeholder" />
+              </Box>
             </VStack>
           </ModalBody>
           <ModalFooter p="10px">
