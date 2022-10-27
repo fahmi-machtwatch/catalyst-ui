@@ -17,7 +17,7 @@ const Checkbox: ComponentStyleConfig = {
   sizes: {
     sm: definePartsStyle({
       control: {
-        [$size.variable]: 'sizes.16',
+        [$size.variable]: 'sizes.4',
         borderRadius: 'md',
       },
       label: { fontSize: 'sm' },
@@ -25,7 +25,7 @@ const Checkbox: ComponentStyleConfig = {
     }),
     md: definePartsStyle({
       control: {
-        [$size.variable]: 'sizes.20',
+        [$size.variable]: 'sizes.5',
         borderRadius: 'md',
       },
       label: { fontSize: 'md' },

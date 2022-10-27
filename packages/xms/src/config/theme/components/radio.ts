@@ -29,8 +29,8 @@ const Radio: ComponentStyleConfig = {
   sizes: {
     sm: definePartsStyle({
       control: {
-        w: '12',
-        h: '12',
+        w: '3',
+        h: '3',
       },
       label: {
         fontSize: 'sm',
@@ -38,8 +38,8 @@ const Radio: ComponentStyleConfig = {
     }),
     md: definePartsStyle({
       control: {
-        w: '16',
-        h: '16',
+        w: '4',
+        h: '4',
       },
       label: {
         fontSize: 'md',

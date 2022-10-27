@@ -22,43 +22,43 @@ const lineHeights = {
   short: 1.375,
   base: 1.5,
   tall: 1.625,
-  34: '2.125rem',
-  30: '1.875rem',
-  26: '1.625rem',
-  24: '1.5rem',
-  22: '1.375rem',
-  20: '1.25rem',
-  18: '1.125rem',
-  14: '0.875rem',
-  12: '0.75rem',
+  34: '2.125rem', // 34px
+  30: '1.875rem', // 30px
+  26: '1.625rem', // 26px
+  24: '1.5rem', // 24px
+  22: '1.375rem', // 22px
+  20: '1.25rem', // 20px
+  18: '1.125rem', // 18px
+  14: '0.875rem', // 14px
+  12: '0.75rem', // 12px
 };
 
 const fontSizes = {
   heading: {
-    1: '1.75rem',
-    2: '1.5rem',
-    3: '1.25rem',
-    4: '1.125rem',
-    5: '1rem',
-    6: '0.875rem',
+    1: '1.75rem', // 28px
+    2: '1.5rem', // 24px
+    3: '1.25rem', // 20px
+    4: '1.125rem', // 18px
+    5: '1rem', //	16px
+    6: '0.875rem', //	14px
   },
   text: {
-    lg: '1rem',
-    md: '0.875rem',
-    sm: '0.75rem',
+    lg: '1rem', // 16px
+    md: '0.875rem', // 14px
+    sm: '0.75rem', // 12px
   },
   button: {
-    lg: '1.25rem',
-    md: '0.875rem',
-    sm: '0.688rem',
+    lg: '1.25rem', // 20px
+    md: '0.875rem', // 14px
+    sm: '0.688rem', // 11px
   },
-  form: {
-    lg: '1rem',
-    md: '0.875rem',
-    sm: '0.75rem',
+  field: {
+    lg: '1rem', // 16px
+    md: '0.75rem', // 12px
+    sm: '0.625rem', // 10px
   },
   table: {
-    header: '0.75rem',
+    header: '0.75rem', // 12px
   },
 };
 
@@ -91,6 +91,12 @@ const heading = {
     fontSize: fontSizes.heading[5],
     fontWeight: 'bold',
     lineHeight: '1.5rem',
+    letterSpacing: '0',
+  },
+  6: {
+    fontSize: fontSizes.heading[6],
+    fontWeight: 'bold',
+    lineHeight: '1rem',
     letterSpacing: '0',
   },
 };
@@ -134,10 +140,32 @@ const button = {
   },
 };
 
+const field = {
+  lg: {
+    fontSize: fontSizes.field.lg,
+    lineHeight: lineHeights[20],
+    letterSpacing: '0',
+    fontWeight: fontWeights.normal,
+  },
+  md: {
+    fontSize: fontSizes.field.md,
+    lineHeight: lineHeights[18],
+    letterSpacing: '0',
+    fontWeight: fontWeights.normal,
+  },
+  sm: {
+    fontSize: fontSizes.field.sm,
+    lineHeight: lineHeights[14],
+    letterSpacing: '0',
+    fontWeight: fontWeights.normal,
+  },
+};
+
 const textStyles = {
   heading,
   text,
   button,
+  field,
 };
 
 export { fonts, fontSizes, fontWeights, lineHeights, textStyles };

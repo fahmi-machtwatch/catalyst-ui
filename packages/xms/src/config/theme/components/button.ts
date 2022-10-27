@@ -8,7 +8,10 @@ const Button: ComponentStyleConfig = {
     fontSize: 'body.1',
     margin: 4,
     lineHeight: '1.25',
-    minW: 104,
+    minW: 24,
+    px: 4,
+    py: 3,
+    borderRadius: 'md',
     _disabled: {
       borderColor: 'neutral.sm',
       color: 'neutral.sm',
@@ -29,35 +32,30 @@ const Button: ComponentStyleConfig = {
   // Two sizes: sm and md
   sizes: {
     lg: {
-      h: 46,
-      minW: 104,
-      px: 16,
-      py: 12,
-      borderRadius: 'md',
+      h: 12,
     },
     md: {
-      h: 38,
-      minW: 104,
-      px: 16,
-      py: 12,
-      borderRadius: 'md',
+      h: 9,
     },
     sm: {
-      h: 30,
-      minW: 104,
-      px: 16,
-      py: 8,
-      borderRadius: 'md',
+      h: 8,
     },
   },
   // Two variants: outline and solid
   variants: {
-    solid: {},
+    solid: {
+      color: 'white',
+      bg: 'primary.500',
+    },
     outline: {
+      color: 'primary.500',
       borderWidth: 2,
       borderStyle: 'inside',
+      borderColor: 'primary.500',
     },
-    ghost: {},
+    ghost: {
+      color: 'primary.500',
+    },
     link: {
       bg: 'transparent',
       color: 'primary.500',
