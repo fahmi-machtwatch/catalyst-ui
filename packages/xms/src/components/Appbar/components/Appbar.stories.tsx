@@ -3,13 +3,13 @@ import { ChakraProvider } from '@chakra-ui/react';
 
 import { theme } from '../../../config/theme';
 import { XMSProvider } from '../../../provider';
-import HeaderComponent from './Header';
+import Appbar from './Appbar';
 
 export default {
   chakra: {
     theme,
   },
-  title: 'XMS',
+  title: 'XMS Component Kit/components/Appbar',
   decorators: [
     (Story: React.ElementType) => (
       <ChakraProvider theme={theme}>
@@ -21,8 +21,6 @@ export default {
   ],
 };
 
-export const Header = () => {
-  return (
-    <HeaderComponent version="v1.0.0" environment="DEVELOPMENT" email="fahmi@machtwatch.co.id" userRole="Super Admin" />
-  );
+export const AppbarDefault = () => {
+  return <Appbar version="v1.0.0" environment="DEVELOPMENT" email="fahmi@machtwatch.co.id" userRole="Super Admin" />;
 };

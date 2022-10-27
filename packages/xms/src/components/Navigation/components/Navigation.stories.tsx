@@ -4,13 +4,13 @@ import { FiShoppingBag, FiShoppingCart } from 'react-icons/fi';
 
 import { theme } from '../../../config/theme';
 import { XMSProvider } from '../../../provider';
-import NavigationComponent from './Navigation';
+import Navigation from './Navigation';
 
 export default {
   chakra: {
     theme,
   },
-  title: 'XMS',
+  title: 'XMS Component Kit/Components/Navigation',
   decorators: [
     (Story: React.ElementType) => (
       <ChakraProvider theme={theme}>
@@ -22,9 +22,9 @@ export default {
   ],
 };
 
-export const Navigation = () => {
+export const NavigationDefault = () => {
   return (
-    <NavigationComponent
+    <Navigation
       navigations={[
         {
           title: 'Order',

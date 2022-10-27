@@ -27,6 +27,7 @@ const Profile: React.FC<ProfileProps> = ({ email, userRole, onLogout }) => (
       cursor={'pointer'}
       minW={0}
       _hover={{ textDecor: 'none' }}
+      m={0}
     >
       <HStack>
         <VStack display={{ base: 'none', md: 'flex' }} alignItems="flex-end" spacing="1px" ml="2">

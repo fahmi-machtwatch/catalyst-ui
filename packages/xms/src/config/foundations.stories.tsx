@@ -3,7 +3,7 @@ import { Box, ChakraProvider, SimpleGrid, Stack, Text } from '@chakra-ui/react';
 import { theme } from '.';
 
 export default {
-  title: 'Foundation',
+  title: 'XMS Component Kit/Foundation/Theme',
   parameters: {
     controls: {
       disabled: true,

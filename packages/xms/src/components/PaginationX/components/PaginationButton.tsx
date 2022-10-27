@@ -10,12 +10,13 @@ const PaginationButton = forwardRef<ButtonProps, 'button'>(({ className, style, 
     <Button
       ref={ref}
       className={className}
+      style={style}
       borderRadius={50}
       fontWeight={700}
       m={0}
-      p={3}
-      h={30}
-      style={style}
+      px={3}
+      py={2}
+      h={8}
       minW="auto"
       background={isActive ? 'primary.500' : 'secondary.50'}
       color={isActive ? 'white' : 'black'}

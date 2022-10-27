@@ -4,7 +4,7 @@ import { Box, Button, ChakraProvider, FormLabel, Input, useDisclosure, VStack } 
 import { theme } from '../../../config/theme';
 import { XMSProvider } from '../../../provider';
 
-import ModalComponent from './Modal';
+import Modal from './Modal';
 import ModalBody from './ModalBody';
 import ModalCloseButton from './ModalCloseButton';
 import ModalContent from './ModalContent';
@@ -16,7 +16,7 @@ export default {
   chakra: {
     theme,
   },
-  title: 'XMS',
+  title: 'XMS Component Kit/Components/Modal',
   decorators: [
     (Story: React.ElementType) => (
       <ChakraProvider theme={theme}>
@@ -28,12 +28,12 @@ export default {
   ],
 };
 
-export const Modal = () => {
+export const ModalDefault = () => {
   const { isOpen, onClose, onOpen } = useDisclosure();
   return (
     <>
       <Button onClick={onOpen}>Open Modal</Button>
-      <ModalComponent isOpen={isOpen} onClose={onClose} isCentered>
+      <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader p="10px">Create Order</ModalHeader>
@@ -61,7 +61,7 @@ export const Modal = () => {
             </Button>
           </ModalFooter>
         </ModalContent>
-      </ModalComponent>
+      </Modal>
     </>
   );
 };

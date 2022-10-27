@@ -11,7 +11,7 @@ export default {
   chakra: {
     theme,
   },
-  title: 'XMS/Pagination',
+  title: 'XMS Component Kit/Components/Pagination',
   decorators: [
     (Story: React.ElementType) => (
       <ChakraProvider theme={theme}>
@@ -23,7 +23,7 @@ export default {
   ],
 };
 
-export const Example = () => {
+export const PaginationDefault = () => {
   const [currentPage, setCurrentPage] = React.useState(1);
 
   return (
