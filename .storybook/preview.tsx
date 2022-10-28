@@ -11,9 +11,15 @@ export const parameters = {
       },
       {
         name: 'dark',
-        value: '#b6b2b2',
+        value: '#565656',
       },
     ],
+  },
+  options: {
+    storySort: {
+      method: 'alphabetical',
+      order: ['Getting Started', 'Core', 'Foundations', 'Components'],
+    },
   },
 };
 

@@ -11,7 +11,7 @@ export default {
   chakra: {
     theme,
   },
-  title: 'XMS Component Kit/Components/Pagination',
+  title: 'Components/Pagination',
   decorators: [
     (Story: React.ElementType) => (
       <ChakraProvider theme={theme}>

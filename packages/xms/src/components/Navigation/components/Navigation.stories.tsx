@@ -10,7 +10,7 @@ export default {
   chakra: {
     theme,
   },
-  title: 'XMS Component Kit/Components/Navigation',
+  title: 'Components/Navigation',
   decorators: [
     (Story: React.ElementType) => (
       <ChakraProvider theme={theme}>

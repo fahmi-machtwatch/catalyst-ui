@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Box, ChakraProvider, SimpleGrid, Stack, Text } from '@chakra-ui/react';
+import { Box, ChakraProvider, Flex, SimpleGrid, Stack, Text } from '@chakra-ui/react';
 import { theme } from '.';
 
 export default {
-  title: 'XMS Component Kit/Foundation/Theme',
+  title: 'Foundations/Theme',
   parameters: {
     controls: {
       disabled: true,
@@ -229,6 +229,113 @@ export const Spacing = () => {
             <Box w={space} h={4} bg="primary.100" m={1} />
           </Box>
         ))}
+      </Box>
+    </ChakraProvider>
+  );
+};
+
+export const Sizes = () => {
+  const dynamicSizes = [
+    'max',
+    'min',
+    'full',
+    '3xs',
+    '2xs',
+    'xs',
+    'sm',
+    'md',
+    'lg',
+    'xl',
+    '2xl',
+    '3xl',
+    '4xl',
+    '5xl',
+    '6xl',
+    '7xl',
+    '8xl',
+  ];
+
+  const containerSizes = ['prose', 'container.sm', 'container.md', 'container.lg', 'container.xl'];
+
+  const spacing = [
+    'px',
+    0.5,
+    1,
+    1.5,
+    2,
+    2.5,
+    3,
+    3.5,
+    4,
+    4.5,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28,
+    30,
+    32,
+    36,
+    40,
+    44,
+    48,
+    52,
+    56,
+    60,
+    64,
+    72,
+    80,
+    96,
+  ];
+
+  return (
+    <ChakraProvider theme={theme}>
+      <Box my={4}>
+        <Text textStyle="heading.4">Sizes</Text>
+        {spacing.map(space => (
+          <Box key={space} display="flex" py={1} borderBottom="1px solid" borderColor="secondary.50">
+            <Box w={10} mx={4}>
+              {space}
+            </Box>
+            <Box w={16} mx={4}>
+              {space === 'px' ? 1 : (space as number) * 4} px
+            </Box>
+            <Box w={space} h={4} bg="primary.100" m={1} />
+          </Box>
+        ))}
+      </Box>
+      <Box my={4}>
+        <Text textStyle="heading.4">Dynamic Size</Text>
+        {dynamicSizes.map(size => (
+          <Box key={size} display="flex" py={1} borderBottom="1px solid" borderColor="secondary.50">
+            <Box w={10} mx={4}>
+              {size}
+            </Box>
+            <Box w={size} h={4} bg="primary.100" m={1} />
+          </Box>
+        ))}
+      </Box>
+      <Box my={4}>
+        <Text textStyle="heading.4">Container Size</Text>
+        <Flex direction="column" justifyContent="center" alignItems="center">
+          {containerSizes.map(size => (
+            <Box key={size} display="flex" py={1} borderBottom="1px solid" borderColor="secondary.50">
+              <Box w={size} bg="primary.100" m={1} textAlign="center">
+                {size}
+              </Box>
+            </Box>
+          ))}
+        </Flex>
       </Box>
     </ChakraProvider>
   );

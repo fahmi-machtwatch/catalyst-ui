@@ -16,7 +16,7 @@ export default {
   chakra: {
     theme,
   },
-  title: 'XMS Component Kit/Components/Modal',
+  title: 'Components/Modal',
   decorators: [
     (Story: React.ElementType) => (
       <ChakraProvider theme={theme}>

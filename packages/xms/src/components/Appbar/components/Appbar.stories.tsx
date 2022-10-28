@@ -9,7 +9,7 @@ export default {
   chakra: {
     theme,
   },
-  title: 'XMS Component Kit/components/Appbar',
+  title: 'Components/Appbar',
   decorators: [
     (Story: React.ElementType) => (
       <ChakraProvider theme={theme}>
