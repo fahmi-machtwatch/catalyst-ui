@@ -85,22 +85,10 @@ const data = [
   },
 ];
 
-export const DataTableDefault = ({ ...args }) => {
-  return (
-    <XMSProvider>
-      <DataTableComponents {...args} columns={columns} dataSource={data} />
-    </XMSProvider>
-  );
+export const DataTableDefault = () => {
+  return <DataTableComponents columns={columns} dataSource={data} />;
 };
 
-DataTableDefault.bind({
-  selectedRow: false,
-});
-
-export const DataTableSelectedRow = ({ ...args }) => {
-  return (
-    <XMSProvider>
-      <DataTableComponents {...args} columns={columns} dataSource={data} selectedRow />
-    </XMSProvider>
-  );
+export const DataTableSelectedRow = () => {
+  return <DataTableComponents columns={columns} dataSource={data} selectedRow />;
 };
