@@ -1,14 +1,34 @@
 {
   "name": "catalyst-ui",
   "version": "1.0.0",
-  "description": "Voila UI Component",
+  "description": "Voila UI is an implementation for each project on voila.",
   "main": "N/A",
-  "repository": "https://github.com",
+  "repository": "https://github.com/machtwatch/voila-ui",
   "author": "Catalyst Tech",
   "contributors": [
     {
       "name": "Fahmi Idris",
       "email": "fahmi.idris@machtwatch.co.id"
+    },
+    {
+      "name":  "Wirya Ramadhan",
+      "email": "wirya@machtwatch.co.id"
+    },
+    {
+      "name": "Lucky Kusuma",
+      "email": "lucky@machtwatch.co.id"
+    },
+    {
+      "name": "Riky Andreas",
+      "email": "riky.andreas@machtwatch.co.id"
+    },
+    {
+      "name": "Dio Syahrizal",
+      "email": "dio@machtwatch.co.id"
+    },
+    {
+      "name": "Yosua Risandy",
+      "email": "yosua.risandy@machtwatch.co.id"
     }
   ],
   "license": "Apache-2.0",

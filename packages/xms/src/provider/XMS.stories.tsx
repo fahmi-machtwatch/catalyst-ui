@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { Box } from '@chakra-ui/react';
+
+import XMSProvider from './XMSProvider';
 
 export default {
   title: 'Core/Provider',
 };
 
 export const Provider = () => {
-  return <Box>XMS UI Components</Box>;
+  return <XMSProvider>XMS UI Components</XMSProvider>;
 };
