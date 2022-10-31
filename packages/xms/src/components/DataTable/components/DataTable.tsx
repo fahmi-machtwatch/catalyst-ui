@@ -1,8 +1,8 @@
-/* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react/default-props-match-prop-types */
 /* eslint-disable react/require-default-props */
 import * as React from 'react';
-import { Box, Flex, Table, Tbody, Td, Th, Thead, Tr, Spinner, chakra } from '@chakra-ui/react';
+import { Box, Flex, Table, Tbody, Td, Th, Thead, Tr, Spinner, chakra, BoxProps } from '@chakra-ui/react';
 import {
   ColumnDef,
   ColumnSort,
@@ -35,14 +35,14 @@ const IndeterminateCheckbox = ({
 
 export type TableSize = 'sm' | 'md' | 'lg';
 
-export interface DataTableProps {
+export interface DataTableProps extends BoxProps {
   size?: TableSize;
-  columns: ColumnDef<{}, any>[];
-  dataSource: {}[] | undefined;
+  columns: ColumnDef<any>[];
+  dataSource: any[] | undefined;
   isLoading?: boolean;
-  selectedRow?: boolean;
-  onSelectedRow?: (data: {}[]) => void;
-  onSort?: (data: ColumnSort[] | ((prevState: SortingState) => SortingState)) => void | undefined;
+  selectedRow?: boolean | undefined;
+  onSelectedRow?: (data: RowSelectionState[]) => void;
+  onSort?: (data: ColumnSort[] | ((prevState: SortingState) => SortingState)) => void;
 }
 
 const DataTable: React.FC<DataTableProps> = ({
@@ -53,10 +53,11 @@ const DataTable: React.FC<DataTableProps> = ({
   onSelectedRow,
   onSort,
   size,
+  ...props
 }) => {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [rowSelection, setRowSelection] = React.useState<RowSelectionState>({});
-  const dataColumns = React.useMemo<ColumnDef<Record<string, never>>[]>(() => columns, [columns]);
+  const dataColumns = React.useMemo<ColumnDef<any>[]>(() => columns, [columns]);
 
   const checkboxColumn = {
     id: 'select',
@@ -121,7 +122,7 @@ const DataTable: React.FC<DataTableProps> = ({
   }, [flatRows]);
 
   return (
-    <Box w="full" maxW="100%" overflowX="scroll" pos="relative" minH={400}>
+    <Box {...props}>
       {isLoading && (
         <Flex w="100%" h="100%" pos="absolute" bg="white" align="center" justify="center" zIndex={2}>
           <Spinner color="primary.500" thickness="4px" size="lg" />
@@ -172,6 +173,11 @@ const DataTable: React.FC<DataTableProps> = ({
 
 DataTable.defaultProps = {
   selectedRow: false,
+  overflowX: 'scroll',
+  pos: 'relative',
+  maxW: '100%',
+  minH: 400,
+  w: 'full',
   size: 'md',
 };
 
