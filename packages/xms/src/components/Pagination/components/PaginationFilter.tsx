@@ -21,7 +21,7 @@ const PaginationFilter: React.FC<PaginationFilterProps<number>> = ({
 }) => {
   return (
     <Box display="flex" flexDirection="row" alignItems="center">
-      <Text scale={300} mr={10} {...rest}>
+      <Text scale={300} mr={3} {...rest}>
         {label}
       </Text>
       <Select
@@ -30,7 +30,7 @@ const PaginationFilter: React.FC<PaginationFilterProps<number>> = ({
         border="none"
         boxShadow="none"
         _focusVisible={{ boxShadow: 'none' }}
-        width="50px"
+        width={70}
         onChange={e => onChange(Number(e.target.value))}
       >
         {items.map(item => {

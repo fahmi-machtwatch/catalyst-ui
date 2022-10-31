@@ -16,14 +16,4 @@ describe('components/PaginationFilter', () => {
     expect(text).toBeVisible();
     expect(displayValue).toBeVisible();
   });
-
-  // TODO : fix testing dropdown
-  // test('handle change value', async () => {
-  //   const { getByRole, debug } = render(
-  //     <PaginationFilter items={[20, 30]} limit={10} onChange={handleSelect} label={'Limit'} />
-  //   );
-  //   const button = getByRole('button');
-  //   fireEvent.click(button);
-  //   debug();
-  // });
 });
