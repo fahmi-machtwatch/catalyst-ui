@@ -51,9 +51,15 @@ const Navigation: React.FC<NavigationProps> = ({ navigations, ...props }) => (
                     </Link>
                   </PopoverTrigger>
                   {navigation.children && (
-                    <PopoverContent maxW={250} border="none" boxShadow="0 5px 25px rgb(0 0 0 / 10%)">
+                    <PopoverContent
+                      key={navigation.title}
+                      maxW={250}
+                      border="none"
+                      boxShadow="0 5px 25px rgb(0 0 0 / 10%)"
+                    >
                       {navigation.children.map(subNavigation => (
                         <Link
+                          key={subNavigation.title}
                           display="flex"
                           alignItems="center"
                           _hover={{ backgroundColor: '#f8f8f8', color: 'primary.500' }}
