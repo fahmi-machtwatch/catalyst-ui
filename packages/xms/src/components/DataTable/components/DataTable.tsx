@@ -36,12 +36,12 @@ const IndeterminateCheckbox = ({
 export type TableSize = 'sm' | 'md' | 'lg';
 
 export interface DataTableProps {
-  size?: TableSize | undefined;
+  size?: TableSize;
   columns: ColumnDef<{}, any>[];
-  dataSource?: {}[] | undefined;
+  dataSource: {}[] | undefined;
   isLoading?: boolean;
   selectedRow?: boolean;
-  onSelectedRow?: (data: {}[]) => void | undefined;
+  onSelectedRow?: (data: {}[]) => void;
   onSort?: (data: ColumnSort[] | ((prevState: SortingState) => SortingState)) => void | undefined;
 }
 
@@ -171,7 +171,6 @@ const DataTable: React.FC<DataTableProps> = ({
 };
 
 DataTable.defaultProps = {
-  dataSource: [],
   selectedRow: false,
   size: 'md',
 };
