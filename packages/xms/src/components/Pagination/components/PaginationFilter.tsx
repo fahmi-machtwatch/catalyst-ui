@@ -34,7 +34,11 @@ const PaginationFilter: React.FC<PaginationFilterProps<number>> = ({
         onChange={e => onChange(Number(e.target.value))}
       >
         {items.map(item => {
-          return <option value={item}>{item}</option>;
+          return (
+            <option key={item} value={item}>
+              {item}
+            </option>
+          );
         })}
       </Select>
     </Box>
