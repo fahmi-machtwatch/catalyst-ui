@@ -1,5 +1,5 @@
 {
-  "name": "@catalyst-ui/xms",
+  "name": "@catalyst-ui-testing/xms",
   "version": "1.0.0-canary-5",
   "description": "Voila XMS UI Component",
   "main": "dist/index.js",

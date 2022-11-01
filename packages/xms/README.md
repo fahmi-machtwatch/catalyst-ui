@@ -1,1 +1,1 @@
-# @catalyst-ui/xms
+# @catalyst-ui-testing/xms

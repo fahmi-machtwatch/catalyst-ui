@@ -9,7 +9,7 @@ Wrap XMS Component with config, use this component if there are components hit i
 To use this component in your app, import as follows:
 
 ```jsx
-import { XMSProvider } from '@catalyst-ui/xms';
+import { XMSProvider } from '@catalyst-ui-testing/xms';
 
 export default function Component() {
   return (
