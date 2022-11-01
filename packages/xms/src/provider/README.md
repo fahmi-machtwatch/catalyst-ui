@@ -1,6 +1,6 @@
 # Provider
 
-Wrap XMS Component with config, use this component if there are components hit into endpoint
+Wrap XMS Component with config, use this component if there are components hit into some endpoint
 
 ## Usage
 
