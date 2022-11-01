@@ -1,6 +1,6 @@
 {
   "name": "@catalyst-ui-testing/xms",
-  "version": "1.0.0-canary.0",
+  "version": "1.0.0-canary.1",
   "description": "Voila XMS UI Component",
   "main": "dist/index.js",
   "module": "dist/xms.esm.js",
